@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fas fa-lock"></i>
+            <span>Web site</span>
+        </div>
+    </header>
+    <div class="container">
+        <form class="form-border">
+            <h1>LOGIN PAGE</h1>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" placeholder="username">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="password">
+            </div>
+            <input type="submit" value="Login" name="login-button">
+            <div class="form-footer">
+                <label class="remember"><input type="checkbox" name="remember"> Remember me?</label>
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+            <h5>Don't have an account? <a href="singup.html">Sign Up</a></h5>
+        </form>
+    </div>
+    <div>
+        <h1>WELCOME</h1>
+        <p>The design is clean and modern, with a focus on usability and accessibility. Feel</p>
+        <p>free to customize the styles further to match your specific requirements.</p>
+    </div>
+</body>
+
+<script>
+    // Handle page transitions
+    document.querySelectorAll('a[href]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Only apply transition to same-domain navigation
+            if (this.hostname === window.location.hostname && this.pathname !== window.location.pathname) {
+                e.preventDefault();
+                const destination = this.href;
+                document.body.classList.add('page-exit');
+                setTimeout(() => {
+                    window.location.href = destination;
+                }, 800); // Match the pageExit animation duration (0.8s)
+            }
+        });
+    });
+</script>
+
+</html>

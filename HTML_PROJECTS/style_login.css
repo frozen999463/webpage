@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Page background for login */
+body {
+	/* Replace with your image file name/path. Use forward slashes in URLs. */
+	background-image: url('images/black and green.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #222; /* fallback color while image loads or if missing */
+	background-attachment: fixed;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+/* Header/Navbar styling */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px);
+	display: flex;
+	align-items: center;
+	padding: 0 40px;
+	z-index: 1000;
+	border-bottom: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.logo i {
+	color: #27ae60;
+	font-size: 28px;
+}
+
+.logo span {
+	color: #fff;
+	letter-spacing: 1px;
+}
+
+/* Keyframe animation for container fade-in and scale */
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px) scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+/* Form border styling */
+.container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh; /* make container full viewport height for vertical centering */
+	padding: 20px 20px 20px 450px; /* left padding to push form to center-right */
+}
+.form-border {
+	border: 1px solid rgba(255,255,255,0.3); /* subtle white border */
+	padding: 20px;         /* space inside the border */
+	border-radius: 12px;   /* slightly larger rounded corners */
+	display: block;
+	width: 100%;
+	max-width: 420px;      /* keep form a reasonable width */
+	text-align: center;    /* center headings and inline text */
+	/* transparent background so gradient shows through */
+	background: rgba(255,255,255,0.05);
+	box-shadow: 0 8px 26px rgba(0,0,0,0.15);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	color: #fff;           /* white text */
+	animation: slideInUp 0.8s ease-out;
+}
+
+/* Optional: nicer inputs */
+.form-border input[type="text"],
+.form-border input[type="password"],
+.form-border input[type="submit"] {
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+/* Oval inputs */
+.form-border input[type="text"],
+.form-border input[type="password"] {
+    display: block;
+    margin: 6px auto;
+    width: 85%;
+    height: 44px;               /* consistent height for an oval look */
+    padding: 0 18px;            /* horizontal padding inside the oval */
+    border-radius: 9999px;      /* make fully rounded (pill/oval) */
+    border: 1px solid #cfcfcf;  /* subtle border */
+    background: #fff;
+    outline: none;
+}
+
+/* Input group wrapper for icon + input */
+.input-group {
+    position: relative;
+    width: 85%;
+    margin: 6px auto;
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {
+    position: absolute;
+    left: 18px;
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: 100%;
+    padding: 0 18px 0 44px;
+    margin: 0;
+    height: 44px;
+    border-radius: 9999px;
+    border: 1px solid #cfcfcf;
+    background: #fff;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+}/* Match submit button size to inputs and make it oval */
+.form-border input[type="submit"] {
+	display: block;
+	width: 85%;
+	height: 44px;
+	margin: 8px auto 0;
+	padding: 0 18px;
+	border-radius: 9999px;
+	border: none;
+	background-color: #27ae60;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.form-border input[type="submit"]:hover {
+	background-color: #00ff04;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(39, 174, 96, 0.35);
+}
+
+.form-border input[type="submit"]:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 8px rgba(39, 174, 96, 0.25);
+}
+
+/* Footer row inside the form: remember + forgot link spaced apart */
+.form-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 85%;
+	margin: 8px auto 4px;
+	font-size: 14px;
+}
+.form-footer .remember input[type="checkbox"] {
+	margin-right: 8px;
+	transform: translateY(1px);
+}
+.form-footer .forgot {
+	color: #fff;
+	text-decoration: none;
+}
+.form-footer .forgot:hover {
+	text-decoration: underline;
+}
+
+/* Make forgot-password and signup links white */
+.form-footer .forgot,
+.signup,
+.signup a {
+	color: #fff;
+}
+.form-footer .forgot:hover,
+.signup a:hover {
+	text-decoration: underline;
+}
+
+/* duplicate submit rule removed to avoid conflicting margins */
+
+/* Welcome text and paragraphs on the left side */
+.container + div {
+	position: fixed;
+	left: 60px;
+	top: 50%;
+	transform: translateY(-50%);
+	max-width: 350px;
+	color: #fff;
+	z-index: 500;
+	display: block !important;
+}
+
+/* rectangle backdrop removed per user request */
+
+.container + div h1 {
+	font-size: 56px;
+	font-weight: 700;
+	margin: 0 0 20px 0;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	line-height: 1.2;
+	text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(39, 174, 96, 0.3);
+	letter-spacing: 2px;
+}
+
+.container + div p {
+	font-size: 18px;
+	line-height: 1.8;
+	color: #fff;
+	margin: 15px 0;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+	font-weight: 300;
+}
+
+/* Sign Up link in h5 - white color */
+.form-border h5 {
+	color: #fff;
+	margin: 14px 0 0 0;
+	font-size: 14px;
+}
+
+.form-border h5 a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.form-border h5 a:hover {
+	text-decoration: underline;
+}
+
+/* Page transition animations */
+@keyframes pageEnter {
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes pageExit {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+}
+
+/* Apply fade-in on page load */
+body {
+	animation: pageEnter 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Apply fade-out when leaving (via JS) */
+body.page-exit {
+	animation: pageExit 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}

@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="singup_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+    <body>
+        <header class="navbar">
+            <div class="logo">
+                <i class="fas fa-lock"></i>
+                <span>Web site</span>
+            </div>
+        </header>
+        <div class="container">
+            <form class="form-border">
+                <h1>REGISTRATION PAGE</h1>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="confirm-password" placeholder="Confirm Password">
+                </div>
+                <input type="submit" value="Sign Up" name="signup-button">
+                <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+        </div>
+        <div>
+            <h1>JOIN US</h1>
+            <p>Create your account and join our community today.</p>
+            <p>Sign up now to get started with our amazing features!</p>
+        </div>
+    </body>
+
+<script>
+    // Handle page transitions
+    document.querySelectorAll('a[href]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Only apply transition to same-domain navigation
+            if (this.hostname === window.location.hostname && this.pathname !== window.location.pathname) {
+                e.preventDefault();
+                const destination = this.href;
+                document.body.classList.add('page-exit');
+                setTimeout(() => {
+                    window.location.href = destination;
+                }, 800); // Match the pageExit animation duration (0.8s)
+            }
+        });
+    });
+</script>
+
+</html>

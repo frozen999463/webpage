@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Signup page styles - matching login page theme */
+
+/* Page background for signup */
+body {
+	background-image: url('images/black and green.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #222;
+	background-attachment: fixed;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+/* Header/Navbar styling */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(10px);
+	display: flex;
+	align-items: center;
+	padding: 0 40px;
+	z-index: 1000;
+	border-bottom: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #fff;
+}
+
+.logo i {
+	color: #27ae60;
+	font-size: 28px;
+}
+
+.logo span {
+	color: #fff;
+	letter-spacing: 1px;
+}
+
+/* Keyframe animation for container fade-in and scale */
+@keyframes slideInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px) scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+/* Center container */
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 20px 20px 20px 450px;
+}
+
+/* Bordered form box */
+.form-border {
+	border: 1px solid rgba(255,255,255,0.3);
+	padding: 20px;
+	border-radius: 12px;
+	display: block;
+	width: 100%;
+	max-width: 420px;
+	text-align: center;
+	background: rgba(255,255,255,0.05);
+	box-shadow: 0 0 50px rgba(39, 174, 96, 0.8), 0 0 25px rgba(39, 174, 96, 0.6), 0 8px 26px rgba(0,0,0,0.2);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	color: #fff;
+	animation: slideInUp 0.8s ease-out;
+}
+
+/* Heading styles */
+.form-border h1 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+/* All input fields as ovals */
+.form-border input[type="text"],
+.form-border input[type="email"],
+.form-border input[type="password"] {
+	display: block;
+	margin: 6px auto;
+	width: 85%;
+	height: 44px;
+	padding: 0 18px;
+	border-radius: 9999px;
+	border: 1px solid #cfcfcf;
+	background: #fff;
+	outline: none;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+/* Input group wrapper for icon + input */
+.input-group {
+	position: relative;
+	width: 85%;
+	margin: 6px auto;
+	display: flex;
+	align-items: center;
+}
+
+.input-group i {
+	position: absolute;
+	left: 18px;
+	color: #666;
+	font-size: 16px;
+	pointer-events: none;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"] {
+	width: 100%;
+	padding: 0 18px 0 44px;
+	margin: 0;
+	height: 44px;
+	border-radius: 9999px;
+	border: 1px solid #cfcfcf;
+	background: #fff;
+	outline: none;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+/* Submit button oval and styled with green color and hover effect */
+.form-border input[type="submit"] {
+	display: block;
+	width: 85%;
+	height: 44px;
+	margin: 8px auto 0;
+	padding: 0 18px;
+	border-radius: 9999px;
+	border: none;
+	background-color: #2aa85e;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	font-size: 14px;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+}
+
+.form-border input[type="submit"]:hover {
+	background-color: #00ff6a;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(39, 174, 96, 0.35);
+}
+
+.form-border input[type="submit"]:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 8px rgba(39, 174, 96, 0.25);
+}
+
+/* Login link at bottom */
+.login-link {
+	text-align: center;
+	font-size: 14px;
+	margin-top: 12px;
+	margin-bottom: 0;
+	color: #fff;
+}
+
+.login-link a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.login-link a:hover {
+	text-decoration: underline;
+}
+
+/* Welcome text and paragraphs on the left side */
+.container + div {
+	position: fixed;
+	left: 60px;
+	top: 50%;
+	transform: translateY(-50%);
+	max-width: 350px;
+	color: #fff;
+	z-index: 500;
+	display: block !important;
+}
+
+.container + div::before { /* rectangle removed */ }
+.container + div h1 {
+	font-size: 56px;
+	font-weight: 700;
+	margin: 0 0 20px 0;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	line-height: 1.2;
+	text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(39, 174, 96, 0.3);
+	letter-spacing: 2px;
+}
+
+.container + div p {
+	font-size: 18px;
+	line-height: 1.8;
+	color: #fff;
+	margin: 15px 0;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+	font-weight: 300;
+}
+
+/* Page transition animations */
+@keyframes pageEnter {
+	from {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes pageExit {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+}
+
+/* Apply fade-in on page load */
+body {
+	animation: pageEnter 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Apply fade-out when leaving (via JS) */
+body.page-exit {
+	animation: pageExit 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
